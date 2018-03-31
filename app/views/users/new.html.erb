@@ -17,5 +17,6 @@
 <%= f.password_field :password %>
 <%= f.label :password_confirmation %>
 <%= f.password_field :password_confirmation%>
+<%= f.hidden_field( :user_type, {:value=>'Parent'}) %>
 <%= f.submit "Sign Up!" %>
 <% end %>

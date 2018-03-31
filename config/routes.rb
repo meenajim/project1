@@ -1,29 +1,13 @@
 Rails.application.routes.draw do
 
 
-
-  get 'performances/index'
-
-  get 'performances/new'
-
-  get 'performances/edit'
-
-  get 'performances/show'
-
-  get 'students/index'
-
-  get 'students/new'
-
-  get 'students/edit'
-
-  get 'students/show'
-
   get 'session/new'
 
 
   get 'users/new'
 
   root :to =>'pages#home'
+  # root :to => 'instructors#index'
 
   resources :users, :only => [:new, :create]
   get '/login' => 'session#new'

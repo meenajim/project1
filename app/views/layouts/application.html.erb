@@ -10,6 +10,8 @@
 
   <body>
     <nav>
+      <%= link_to 'Instructors',instructors_path%>
+      <!-- <%= link_to 'New Instructor',new_instructor_path %> -->
       <%=link_to 'Home',root_path  %>
       <% if @current_user.present? %>
       <%= link_to "Sign Out #{@current_user.email}",login_path, :method => 'delete'%>
