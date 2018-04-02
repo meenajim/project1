@@ -8,8 +8,8 @@
 
 <ul>
   <li><%= link_to instructor.name, instructor %> has <%= pluralize(instructor.likes,'like')%></li>
-  <li><%= instructor.qualification %></li>
-  <li><%= instructor.instrument %></li>
-  <li><%= instructor.description %></li>
+  <!-- <li><%= instructor.qualification %></li> -->
+  <li>Instrument taught: <%= instructor.instrument %></li>
+  <!-- <li><%= instructor.description %></li> -->
 </ul>
 <% end %>

@@ -1,2 +1,16 @@
-<h1>Students#show</h1>
-<p>Find me in app/views/students/show.html.erb</p>
+<h1><%= @student.name %></h1>
+<ul>
+  <li><%= @student.user.name %> Family</li>
+  <li>Phone: <%= @student.phone %>
+</li>
+<% if @student.dob.present?%>
+  <li>Date of Birth: <%= @student.dob.strftime '%d/%m/%Y' unless @student.dob.nil? %></li>
+  <%end%>
+</li>
+</ul>
+
+
+<div class="controls">
+  <%= link_to 'Edit Student', edit_student_path(@student)%>
+<%= link_to 'Delete Student', @student, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%>
+</div>

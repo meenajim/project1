@@ -1,2 +1,28 @@
-<h1>Performances#index</h1>
-<p>Find me in app/views/performances/index.html.erb</p>
+<h1>Performances</h1>
+<%if @current_user.present? && @current_user.user_type == 'Admin'%>
+<%= link_to 'New Performance',new_performance_path%>
+<ul>
+<% @performances.each do |performance| %>
+<h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
+<p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
+<!-- <p><%= video_tag performance.media, :alt => performance.description, :class =>'thumb'%></p> -->
+<li> <%=performance.description%></li>
+<% if performance.performance_date.present? %>
+<li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
+<% end %>
+<% end %>
+</ul><p></p>
+
+<% else %>
+<ul>
+<% @performances_student.each do |performance| %>
+<h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
+<p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
+<!-- <p><%= video_tag performance.media, :alt => performance.description, :class =>'thumb'%></p> -->
+<li> <%=performance.description%></li>
+<% if performance.performance_date.present? %>
+<li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
+<% end %>
+<% end %>
+</ul><p></p>
+<% end %>

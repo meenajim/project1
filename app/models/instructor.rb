@@ -14,4 +14,7 @@
 
 class Instructor < ApplicationRecord
   has_many :students
+  def name_with_instrument
+    "#{name} | #{instrument}"
+  end
 end

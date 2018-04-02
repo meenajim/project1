@@ -14,6 +14,6 @@
 
 class Student < ApplicationRecord
   has_many :performances
-  belongs_to :user, :optional => true
+  belongs_to :user , :optional => true
   belongs_to :instructor, :optional => true
 end

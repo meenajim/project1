@@ -1,0 +1,13 @@
+<%= form_for @student do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+<%= f.label :dob, 'Date of birth' %>
+<%= f.text_field :dob %>
+<%= f.label :instructor_id %>
+<!-- <%= f.select :instructor_id, Instructor.pluck(:name,:id,:instrument)%> -->
+<%= f.collection_select(:instructor_id, Instructor.all, :id, :name_with_instrument)%>
+<%= f.hidden_field(:user_id, {:value=>@current_user.id}) %>
+<%= f.submit %>
+<% end %>
