@@ -3,7 +3,9 @@ class StudentsController < ApplicationController
     @students = Student.all
     # @students_user = Student.find_by :user_id => @current_user.id
     # Person.where(name: 'Spartacus', rating: 4)
+    if @current_user.present?
     @students_user = Student.where(:user_id => @current_user.id)
+    end
   end
 
   def new

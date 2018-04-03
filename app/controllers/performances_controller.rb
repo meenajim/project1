@@ -1,8 +1,10 @@
 class PerformancesController < ApplicationController
   def index
     @performances = Performance.all
-    @students_user = Student.where(:user_id => @current_user.id)
-    @performances_student = Performance.where(:student_id => @students_user.ids)
+    if @current_user.present?
+      @students_user = Student.where(:user_id => @current_user.id)
+      @performances_student = Performance.where(:student_id => @students_user.ids)
+    end
   end
 
   def new

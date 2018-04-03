@@ -1,3 +1,8 @@
+<%if @current_user.nil?%>
+<h2>Restricted to admins!</h2>
+
+<% elsif @current_user.present? && @current_user.user_type == 'Admin'%>
+
 <%= form_for @instructor do |f|%>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -12,4 +17,5 @@
 <%= f.label :likes %>
 <%= f.number_field :likes %>
 <%= f.submit %>
+<% end %>
 <% end %>

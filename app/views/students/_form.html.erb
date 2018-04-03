@@ -1,3 +1,7 @@
+<%if @current_user.nil?%>
+<h2>Please Sign in to proceed!</h2>
+
+<% elsif @current_user.present?%>
 <%= form_for @student do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
@@ -10,4 +14,5 @@
 <%= f.collection_select(:instructor_id, Instructor.all, :id, :name_with_instrument)%>
 <%= f.hidden_field(:user_id, {:value=>@current_user.id}) %>
 <%= f.submit %>
+<% end %>
 <% end %>

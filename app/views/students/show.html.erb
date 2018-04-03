@@ -1,3 +1,7 @@
+<%if @current_user.nil?%>
+<h2>Please Sign in to proceed!</h2>
+
+<% elsif @current_user.present?%>
 <h1><%= @student.name %></h1>
 <ul>
   <li><%= @student.user.name %> Family</li>
@@ -14,3 +18,5 @@
   <%= link_to 'Edit Student', edit_student_path(@student)%>
 <%= link_to 'Delete Student', @student, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%>
 </div>
+
+<% end %>

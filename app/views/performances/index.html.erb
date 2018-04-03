@@ -1,4 +1,9 @@
 <h1>Performances</h1>
+<%if @current_user.nil?%>
+<h2>Please Sign in to proceed!</h2>
+
+<% elsif @current_user.present?%>
+
 <%if @current_user.present? && @current_user.user_type == 'Admin'%>
 <%= link_to 'New Performance',new_performance_path%>
 <ul>
@@ -26,3 +31,5 @@
 <% end %>
 </ul><p></p>
 <% end %>
+
+<%end %>

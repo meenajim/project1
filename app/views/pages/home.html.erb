@@ -1,8 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Music School</title>
+  </head>
+  <body>
+    <div class = "container1">
+      <%if @current_user.present?%>
+      <h2>Welcome back <%=@current_user.email%></h2>
+      <% else %>
+      <h2>Please Sign in to proceed!</h2>
+
+      <%end%>
+    </div>
 
 
-<%if @current_user.present?%>
-<h2>Welcome back <%=@current_user.email%></h2>
-<% else %>
-<h2>Please Sign in to proceed!</h2>
-
-<%end%>
+  </body>
+</html>

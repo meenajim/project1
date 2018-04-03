@@ -1,3 +1,8 @@
+<%if @current_user.nil?%>
+<h2>Restricted to Admins!</h2>
+
+<% elsif @current_user.present?%>
+
 <%= form_for @performance do |f| %>
 <%= f.label :student_id %>
 <%= f.select :student_id, Student.pluck(:name,:id)%>
@@ -11,4 +16,5 @@
 <%= f.url_field :media %>
 
 <%= f.submit %>
+<% end %>
 <% end %>

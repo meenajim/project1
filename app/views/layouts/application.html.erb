@@ -9,20 +9,31 @@
   </head>
 
   <body>
-    <nav>
-      <%= link_to 'Instructors',instructors_path%>
-      <%= link_to 'Students', students_path %>
-      <!-- <%= link_to 'New Instructor',new_instructor_path %> -->
-      <%= link_to 'Performance',performances_path %>
-      <%=link_to 'Home',root_path  %>
-      <% if @current_user.present? %>
-      <%= link_to "Sign Out #{@current_user.email}",login_path, :method => 'delete'%>
-      <% else %>
-      <%= link_to 'Sign Up', new_user_path %>
-      <%= link_to 'Sign in',login_path %>
-      <% end %>
-    </nav>
+    <div class="container">
+    <header>
+      <nav class="menu">
+        <%= link_to 'Instructors',instructors_path%>
+        <%= link_to 'Students', students_path %>
+        <!-- <%= link_to 'New Instructor',new_instructor_path %> -->
+        <%= link_to 'Performance',performances_path %>
+        <%=link_to 'Home',root_path  %>
+        <% if @current_user.present? %>
+        <%= link_to "Sign Out #{@current_user.name}",login_path, :method => 'delete'%>
+        <% else %>
+        <%= link_to 'Sign Up', new_user_path %>
+        <%= link_to 'Sign in',login_path %>
+        <% end %>
+      </nav>
+    </header>
+    <main>
+      <div class = "content">
+        <%= yield %>
+      </div>
 
-    <%= yield %>
+    </main>
+
+    <footer>Created by Meena</footer>
+
+    </div>
   </body>
 </html>
