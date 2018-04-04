@@ -1,6 +1,7 @@
 class InstructorsController < ApplicationController
   def index
     @instructors = Instructor.all
+
   end
 
   def new
@@ -24,6 +25,7 @@ class InstructorsController < ApplicationController
 
   def show
     @instructor = Instructor.find params[:id]
+    @likes = Like.where(:instructor_id => @instructor.id).count
   end
 
   def destroy

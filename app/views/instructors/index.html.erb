@@ -4,10 +4,12 @@
 
 <h1>Instructors</h1>
 <% @instructors.each do |instructor| %>
-<%= image_tag instructor.photo, :alt =>instructor.name, :class =>'thumb'%>
+<%= image_tag instructor.photo, :alt =>instructor.name, :class =>'thumb' if instructor.photo.present? %>
 
 <ul>
-  <li><%= link_to instructor.name, instructor %> has <%= pluralize(instructor.likes,'like')%></li>
+  <!-- <li><%= link_to instructor.name, instructor %> has <%= pluralize(instructor.likes,'like')%></li> -->
+  <li><%= link_to instructor.name, instructor %></li>
+
   <!-- <li><%= instructor.qualification %></li> -->
   <li>Instrument taught: <%= instructor.instrument %></li>
   <!-- <li><%= instructor.description %></li> -->

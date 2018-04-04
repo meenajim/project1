@@ -7,11 +7,11 @@
 #  user_type       :text
 
 User.destroy_all
-u1 = User.create(:name => 'Jack Stewart', :email => 'jack.stewart@gmail.com', :password_digest => 'Jack', :phone => '0412345678', :user_type => 'Parent')
-u2 = User.create(:name => 'Harry Sullivan', :email => 'harry.sullivan@yahoo.com', :password_digest => 'Harry', :phone => '0432233222', :user_type => 'Parent')
-u3 = User.create(:name => 'Sally Jensen', :email => 'sally.jensen@gmail.com', :password_digest => 'Sally', :phone => '0412345678', :user_type => 'Parent')
-u4 = User.create(:name => 'Patrick Jackson', :email => 'patrick.jackson@gmail.com', :password_digest => 'Patrick', :phone => '0411223344', :user_type => 'Parent')
-u5 = User.create(:name => 'Manager1', :email => 'manager1@gmail.com', :password_digest => 'Manager1', :phone => '012345678', :user_type => 'Admin')
+u1 = User.create(:name => 'Jack Stewart', :email => 'jack.stewart@gmail.com', :password => 'Jack', :phone => '0412345678', :user_type => 'Parent')
+u2 = User.create(:name => 'Harry Sullivan', :email => 'harry.sullivan@yahoo.com', :password => 'Harry', :phone => '0432233222', :user_type => 'Parent')
+u3 = User.create(:name => 'Sally Jensen', :email => 'sally.jensen@gmail.com', :password => 'Sally', :phone => '0412345678', :user_type => 'Parent')
+u4 = User.create(:name => 'Patrick Jackson', :email => 'patrick.jackson@gmail.com', :password => 'Patrick', :phone => '0411223344', :user_type => 'Parent')
+u5 = User.create(:name => 'Manager1', :email => 'manager1@gmail.com', :password => 'Manager1', :phone => '012345678', :user_type => 'Admin')
 
 #Table name: instructors
 #

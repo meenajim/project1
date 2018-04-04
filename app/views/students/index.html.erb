@@ -3,7 +3,7 @@
 <h2>Please Sign in to proceed!</h2>
 
 <% elsif @current_user.present?%>
-  <p><%= link_to 'New Student',new_student_path%></p>
+  <p><%= link_to 'New Enrollment',new_student_path%></p>
 
     <%if @current_user.present? && @current_user.user_type == 'Admin'%>
     <ul>

@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-
-
-  get 'session/new'
-
-
-  get 'users/new'
-
   root :to =>'pages#home'
   # root :to => 'instructors#index'
 
@@ -13,7 +6,11 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
-  resources :instructors
+  resources :instructors do
+    post 'like' => 'likes#create'
+    delete 'like' => 'likes#destroy'
+  end
+  #post '/instructors/:instructor_id/like' => 'likes#create'
   resources :students
   resources :performances
 

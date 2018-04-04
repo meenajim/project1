@@ -9,6 +9,7 @@
 #  media            :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  name             :text
 #
 
 class Performance < ApplicationRecord

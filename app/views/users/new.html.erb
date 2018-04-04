@@ -6,17 +6,22 @@
   <% end %>
 </ol>
 <% end %>
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name  %>
-<%= f.label :phone %>
-<%= f.text_field :phone%>
-<%= f.label :email %>
-<%= f.email_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation%>
-<%= f.hidden_field( :user_type, {:value=>'Parent'}) %>
-<%= f.submit "Sign Up!" %>
-<% end %>
+<div id="login1">
+  <%= form_for @user do |f| %>
+  <div class = "signup"><%= f.label :name %>
+  <%= f.text_field :name  %></div>
+  <div class = "signup"><%= f.label :phone %>
+  <%= f.text_field :phone%></div>
+  <div class = "signup"><%= f.label :email %>
+  <%= f.email_field :email %></div>
+  <div class = "signup"><%= f.label :password %>
+  <%= f.password_field :password %></div>
+  <div class = "signup"><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation%></div>
+  <%= f.hidden_field( :user_type, {:value=>'Parent'}) %>
+  <div class = "submit"><%= f.submit "Sign Up!" %></div>
+  <% end %>
+
+
+
+</div>
