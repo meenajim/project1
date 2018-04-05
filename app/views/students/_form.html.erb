@@ -5,15 +5,15 @@
 <%= form_for @student do |f| %>
 <fieldset class = "form-group col-5">
   <%= f.label :name %>
-  <%= f.text_field :name, :class => 'form-control' %>
+  <%= f.text_field :name, :class => 'form-control' ,:required =>true%>
 </fieldset>
 <fieldset class = "form-group col-5">
   <%= f.label :phone %>
-  <%= f.text_field :phone , :class => 'form-control'%>
+  <%= f.text_field :phone , :class => 'form-control',:required =>true%>
 </fieldset>
 <fieldset class = "form-group col-5">
   <%= f.label :dob, 'Date of birth' %>
-  <%= f.text_field :dob, :class => 'form-control' %>
+  <%= f.text_field :dob, :class => 'form-control',:required =>true %>
 </fieldset>
 <%= f.label :instructor_id %>
 <!-- <%= f.select :instructor_id, Instructor.pluck(:name,:id,:instrument)%> -->

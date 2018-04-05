@@ -7,16 +7,16 @@
 
 <fieldset class = "form-group col-5">
     <%= f.label :name %>
-    <%= f.text_field :name,:class => 'form-control' %>
+    <%= f.text_field :name,:class => 'form-control',:required =>true %>
 </fieldset>
 
 <fieldset class = "form-group col-5">
     <%= f.label :qualification %>
-    <%= f.text_field :qualification,:class => 'form-control'  %>
+    <%= f.text_field :qualification,:class => 'form-control',:required =>true  %>
 </fieldset>
 <fieldset class = "form-group col-5">
     <%= f.label :instrument %>
-    <%= f.text_field :instrument,:class => 'form-control'  %>
+    <%= f.text_field :instrument,:class => 'form-control',:required =>true  %>
 </fieldset>
 <fieldset class = "form-group col-5">
     <%= f.label :description %>
