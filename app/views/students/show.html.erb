@@ -34,13 +34,14 @@
 <p></p>
 <p></p>
 <div class="controls">
-  <a class="badge badge-warning"  <%= link_to 'Edit Student', edit_student_path(@student)%>
-</a>
+<%= link_to 'Edit Student', edit_student_path(@student),:class => 'badge badge-warning'%>
+<%= link_to 'Delete Student', @student, :method => 'delete', :data =>{:confirm =>'Are you sure?'},:class => 'badge badge-warning'%>
 
-<a class="badge badge-warning" <%= link_to 'Delete Student', @student, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%>
-</a>
 <!-- <%= link_to 'Edit Student', edit_student_path(@student)%>
 <%= link_to 'Delete Student', @student, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%> -->
 </div>
+
+
+
 
 <% end %>

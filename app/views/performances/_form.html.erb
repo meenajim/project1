@@ -25,8 +25,8 @@
 </fieldset>
 <fieldset class = "form-group col-5">
 
-<%= f.label :media %>
-<%= f.url_field :media,:class => 'form-control'  %>
+<%= f.label :media,"Media: Please paste an embed file" %>
+<%= f.text_area :media,:class => 'form-control'  %>
 </fieldset>
 
 <%= f.submit %>

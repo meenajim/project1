@@ -24,8 +24,7 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-      <%= link_to 'New Performance',new_performance_path,:class => 'badge badge-warning'%>
-
+    <%= link_to 'New Performance',new_performance_path,:class => 'badge badge-warning'%>
     </div>
     <div class="col-sm">
     </div>
@@ -34,34 +33,32 @@
 <p></p>
 <p></p>
 <ul>
-<% @performances.each do |performance| %>
-<!-- <h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
-<p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
-<li> <%=performance.description%></li>
-<% if performance.performance_date.present? %>
-<li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
-<% end %>-->
 
-<%= link_to image_tag(performance.media, :class =>'thumb',:alt =>performance.student.name),performance.student, :title =>performance.student.name %>
+  <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+          <div class="card" style="width: 18rem;">
 
-<% end %>
-</ul><p></p>
-
-<% else %>
-<ul>
-<% @performances_student.each do |performance| %>
-<!-- <h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
-<p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
-<li> <%=performance.description%></li>
-<% if performance.performance_date.present? %>
-<li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
-<% end %> -->
-
-<%= link_to image_tag(performance.media, :class =>'thumb',:alt =>performance.student.name),performance.student, :title =>performance.student.name %>
+                <ul class="list-group list-group-flush">
+                    <% @performances.each do |performance| %>
+                      <li class="list-group-item"><%= link_to performance.name, performance %></li>
+                    <% end %>
+                </ul>
+          </div>
 
 
-<% end %>
-</ul><p></p>
-<% end %>
+           <% else %>
+          <div class="card" style="width: 18rem;">
+                 <ul class="list-group list-group-flush">
+                 <% @performances_student.each do |performance| %>
 
-<%end %>
+                 <li class="list-group-item"><%= link_to performance.student.name, performance.student %></li>
+                  <% end %>
+            </ul><p></p>
+          </div>
+          <div class="col-sm">
+          </div>
+  </div>
+            <%end%>
+            <%end %>

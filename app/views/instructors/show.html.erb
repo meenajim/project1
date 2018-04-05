@@ -7,9 +7,10 @@
 <!-- <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsl65K_7t1w9rT2Giezkv7A4MVfO00PuhNyRwZt7gdDylHWVsK"> -->
   <% if @current_user.present? %>
     <% if @instructor.likes.where(:user_id => @current_user.id).count == 0 %>
-      <!-- <i class="far fa-thumbs-up"></i> -->
+      <i class="fa fa-thumbs-up"></i>
       <%=link_to '  like', instructor_like_path(@instructor.id), :method => 'post'%></p>
     <% else %>
+    <i class="fa fa-thumbs-down"></i>
       <%= link_to '  unlike', instructor_like_path(@instructor.id), :method => 'delete' %>
     <% end %>
   <% end %>
