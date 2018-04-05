@@ -1,25 +1,42 @@
-# README
+# Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Music School app developed in Ruby on Rails, Bootstrap and HTML.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+The application has 3 levels of access.
+* Regular users can view general information about the school and instructor details.
+* Signed in users (typically parents) who want to enroll their children in the music school.
+* Administrators who can access all sections of the application.
 
-* System dependencies
 
-* Configuration
+### App Features:
 
-* Database creation
+* User level access restrictions to different parts of the application and to different options within each page.
+* Parents are restricted to only view details of their kids and their performances.
+* Administrators can upload performances for the kids who are enrolled.
+* Images of instructors can be uploaded from your local PC and onto Cloudinary
+* Instructors can be given likes by Signed in users in order to help other parents to choose popular instructors.
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+None.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Installing
 
-* Deployment instructions
+The app runs on the browser. No installation required.
 
-* ...
-# project1
+## Built With
+
+* [RubyOnRails](http://rubyonrails.org/)
+* [Heroku](https://devcenter.heroku.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Cloudinary](https://cloudinary.com/)
+
+## Authors
+
+* **Meena Jim** - *Initial work* - [See the live site here](https://meenajim.github.io/project0/)
+
+## License
+
+This project is licensed under the MIT License.

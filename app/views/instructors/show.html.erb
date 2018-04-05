@@ -1,7 +1,7 @@
 
 <h1><%= @instructor.name %></h1>
 <%= image_tag(@instructor.photo) if @instructor.photo.present? %>
-<p><%= pluralize(@instructor.likes.count, 'like') if %>
+<p><%= pluralize(@instructor.likes.count, 'like')%>
 <!-- <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsl65K_7t1w9rT2Giezkv7A4MVfO00PuhNyRwZt7gdDylHWVsK"> -->
   <% if @current_user.present? %>
     <% if @instructor.likes.where(:user_id => @current_user.id).count == 0 %>
