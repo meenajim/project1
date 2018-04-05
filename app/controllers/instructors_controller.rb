@@ -11,8 +11,10 @@ class InstructorsController < ApplicationController
   def create
 
     instructor = Instructor.create instructor_params
-    cloudinary = Cloudinary::Uploader.upload( params[ "instructor" ][ "photo" ] )
-    instructor.update :photo => cloudinary["url"]
+    if params[:instructor][:photo].present?
+      cloudinary = Cloudinary::Uploader.upload( params[ "instructor" ][ "photo" ] )
+      instructor.update :photo => cloudinary["url"]
+    end
     redirect_to instructor
 
   end
