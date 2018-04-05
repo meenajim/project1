@@ -54,7 +54,7 @@
                  <ul class="list-group list-group-flush">
                  <% @performances_student.each do |performance| %>
 
-                   <li class="list-group-item"><%= link_to performance.student.name, performance.student %></li>
+                   <li class="list-group-item"><%= link_to performance.name, performance %></li>
                   <% end %>
                   </ul><p></p>
           </div>
