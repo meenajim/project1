@@ -26,6 +26,10 @@ class InstructorsController < ApplicationController
   def update
     instructor = Instructor.find params[:id]
     instructor.update instructor_params
+    if params[:instructor][:photo].present?
+      cloudinary = Cloudinary::Uploader.upload( params[ "instructor" ][ "photo" ] )
+      instructor.update :photo => cloudinary["url"]
+    end
     redirect_to instructor
   end
 
@@ -42,6 +46,6 @@ class InstructorsController < ApplicationController
 
 private
 def instructor_params
-  params.require(:instructor).permit(:name,:qualification,:instrument,:description,:likes,:photo)
+  params.require(:instructor).permit(:name,:qualification,:instrument,:description,:likes)
 end
 end
