@@ -1,29 +1,27 @@
 <%if @current_user.nil?%>
 <h2>Please Sign in to proceed!</h2>
-
 <% elsif @current_user.present?%>
-<div>
 
 <%= form_for @student do |f| %>
 <fieldset class = "form-group col-5">
-<div><%= f.label :name %>
-<%= f.text_field :name, :class => 'form-control' %></div>
+  <%= f.label :name %>
+  <%= f.text_field :name, :class => 'form-control' %>
 </fieldset>
 <fieldset class = "form-group col-5">
-<div><%= f.label :phone %>
-<%= f.text_field :phone , :class => 'form-control'%></div>
+  <%= f.label :phone %>
+  <%= f.text_field :phone , :class => 'form-control'%>
 </fieldset>
 <fieldset class = "form-group col-5">
-<div><%= f.label :dob, 'Date of birth' %>
-<%= f.text_field :dob, :class => 'form-control' %></div>
+  <%= f.label :dob, 'Date of birth' %>
+  <%= f.text_field :dob, :class => 'form-control' %>
 </fieldset>
-<div><%= f.label :instructor_id %>
+<%= f.label :instructor_id %>
 <!-- <%= f.select :instructor_id, Instructor.pluck(:name,:id,:instrument)%> -->
-<%= f.collection_select(:instructor_id, Instructor.all, :id, :name_with_instrument)%></div>
-<%= f.hidden_field(:user_id, {:value=>@current_user.id}) %>
+  <%= f.collection_select(:instructor_id, Instructor.all, :id, :name_with_instrument)%>
+  <%= f.hidden_field(:user_id, {:value=>@current_user.id}) %>
 <fieldset class = "form-group">
-<div><label></label><%= f.submit %></div>
+<label></label><%= f.submit @student.id.nil? ? "Create New Student" : "Update Student",:class => 'btn btn-warning' %>
 </fieldset>
-</div>
+<!-- </div> -->
 <% end %>
 <% end %>

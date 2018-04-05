@@ -22,9 +22,9 @@ u5 = User.create(:name => 'Manager1', :email => 'manager1@gmail.com', :password 
 #  likes         :integer
 
 Instructor.destroy_all
-i1 = Instructor.create(:name => 'Norman Williams', :qualification => 'Bachelor of Arts', :instrument => 'Piano', :description => 'Norman completed his Bachelor degree in Piano in 2010 and has been teaching kids Piano since 2002. He is passionate about music education and has taught over 270 kids over the years.', :likes => '78')
-i2 = Instructor.create(:name => 'Annie McManus', :qualification => 'Master of Arts', :instrument => 'Guitar', :description => 'Annie completed her Masters degree in Guitar in 2012 and has been teaching kids Guitar and Ukulele since 2000. She loves Guitars and has a collection of over 30 guitars. She has taught over 320 kids over the years.', :likes => '145')
-i3 = Instructor.create(:name => 'Jhonnie Tran', :qualification => 'Master of Arts', :instrument => 'Piano', :description => 'Jhonnie completed his Masters degree in Piano in 2017 and has been teaching kids Piano and Harpsichord since 2012. He is a part of Sydney Royal Orchestra and plays in a cover band in his spare time. He has taught over 50 kids over the years.', :likes => '35')
+i1 = Instructor.create(:name => 'Norman Williams', :qualification => 'Bachelor of Arts', :instrument => 'Piano',:photo =>'https://d1qb2nb5cznatu.cloudfront.net/users/7428972-large?1517665435', :description => 'Norman completed his Bachelor degree in Piano in 2010 and has been teaching kids Piano since 2002. He is passionate about music education and has taught over 270 kids over the years.', :likes => '0')
+i2 = Instructor.create(:name => 'Annie McManus', :qualification => 'Master of Arts', :instrument => 'Guitar',:photo =>'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI_nnYe7HiF4PSbW35Fh1lPope3pYbaOPo-dnkO7M7qQxC332IOg', :description => 'Annie completed her Masters degree in Guitar in 2012 and has been teaching kids Guitar and Ukulele since 2000. She loves Guitars and has a collection of over 30 guitars. She has taught over 320 kids over the years.', :likes => '0')
+i3 = Instructor.create(:name => 'Jhonnie Tran', :qualification => 'Master of Arts', :instrument => 'Piano',:photo =>'https://ccmcollege.com/wp-content/grand-media/image/thumb/Alessandro_Bertoni_-_03.jpg', :description => 'Jhonnie completed his Masters degree in Piano in 2017 and has been teaching kids Piano and Harpsichord since 2012. He is a part of Sydney Royal Orchestra and plays in a cover band in his spare time. He has taught over 50 kids over the years.', :likes => '0')
 
 # Table name: students
 #
@@ -54,11 +54,11 @@ s12 = Student.create(:name => 'Sirius Jackson', :phone => '0421234523', :dob => 
 #  media            :text
 
 Performance.destroy_all
-p1 = Performance.create(:performance_date => '2017-12-18', :description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=yXOJVuF2tzI')
-p2 = Performance.create(:performance_date => '2017-12-18', :description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=rEGOihjqO9w')
-p3 = Performance.create(:performance_date => '2017-12-18', :description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=_asI5WvGVQs')
-p4 = Performance.create(:performance_date => '2018-01-18', :description => 'Recital at the Opera House.', :media => 'https://www.youtube.com/watch?v=2bFo65szAP0')
-p5= Performance.create(:performance_date => '2018-01-18', :description => 'Recital at the Opera House.', :media => 'https://www.youtube.com/watch?v=YT_63UntRJE')
+p1 = Performance.create(:performance_date => '2017-12-18',:name => 'Going Baroque',:description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=yXOJVuF2tzI')
+p2 = Performance.create(:performance_date => '2017-12-18',:name => 'Jive Turkey', :description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=rEGOihjqO9w')
+p3 = Performance.create(:performance_date => '2017-12-18',:name => 'Warmy Starry Nights', :description => 'Recital at Hills Grammar school.', :media => 'https://www.youtube.com/watch?v=_asI5WvGVQs')
+p4 = Performance.create(:performance_date => '2018-01-18',:name => 'Dance  of the gnomes',:description => 'Recital at the Opera House.', :media => 'https://www.youtube.com/watch?v=2bFo65szAP0')
+p5= Performance.create(:performance_date => '2018-01-18',:name => 'A wild chase', :description => 'Recital at the Opera House.', :media => 'https://www.youtube.com/watch?v=YT_63UntRJE')
 
 # Linking the tables
 # Instructor links to students

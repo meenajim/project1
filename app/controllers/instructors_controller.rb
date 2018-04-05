@@ -9,8 +9,12 @@ class InstructorsController < ApplicationController
   end
 
   def create
+
     instructor = Instructor.create instructor_params
+    cloudinary = Cloudinary::Uploader.upload( params[ "instructor" ][ "photo" ] )
+    instructor.update :photo => cloudinary["url"]
     redirect_to instructor
+
   end
 
   def edit

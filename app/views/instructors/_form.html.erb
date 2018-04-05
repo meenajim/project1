@@ -1,36 +1,38 @@
 <%if @current_user.nil?%>
-<h2>Restricted to admins!</h2>
+  <h2>Restricted to admins!</h2>
 
 <% elsif @current_user.present? && @current_user.user_type == 'Admin'%>
 
-<%= form_for @instructor do |f|%>
+<%= form_for(@instructor, :html => { :multipart => true}) do |f|%>
+
 <fieldset class = "form-group col-5">
-<%= f.label :name %>
-<%= f.text_field :name,:class => 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name,:class => 'form-control' %>
 </fieldset>
 
 <fieldset class = "form-group col-5">
-<%= f.label :qualification %>
-<%= f.text_field :qualification,:class => 'form-control'  %>
+    <%= f.label :qualification %>
+    <%= f.text_field :qualification,:class => 'form-control'  %>
 </fieldset>
 <fieldset class = "form-group col-5">
-<%= f.label :instrument %>
-<%= f.text_field :instrument,:class => 'form-control'  %>
+    <%= f.label :instrument %>
+    <%= f.text_field :instrument,:class => 'form-control'  %>
 </fieldset>
 <fieldset class = "form-group col-5">
-  <%= f.label :description %>
-  <%= f.text_area :description,:class => 'form-control'  %>
+    <%= f.label :description %>
+    <%= f.text_area :description,:class => 'form-control'  %>
 </fieldset>
 <fieldset class = "form-group col-5">
-  <%= f.label :photo %>
-  <%= f.url_field :photo,:class => 'form-control'  %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo,:class => 'form-control'  %>
 </fieldset>
 <!-- <fieldset class = "form-group">
   <%= f.label :likes %>
   <%= f.number_field :likes ,:class => 'form-control' %>
 </fieldset> -->
 <fieldset class = "form-group">
-<label></label><%= f.submit "Create New Instructor"%>
+  <label></label>
+  <%= f.submit @instructor.id.nil? ? "Create New Instructor" : "Update Instructor", :class => 'btn btn-warning' %>
 </fieldset>
 <% end %>
 <% end %>

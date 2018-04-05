@@ -34,7 +34,7 @@ gem 'jquery-rails' #also need to add this application.js
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap'
-# gem 'cloudinary'
+gem 'cloudinary'
 gem 'font-awesome-rails'
 
 group :development, :test do

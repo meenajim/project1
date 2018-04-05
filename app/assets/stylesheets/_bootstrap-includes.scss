@@ -1,9 +1,17 @@
 @import "bootstrap";
 @import "font-awesome.css";
 
+.center {
+  text-align: center;
+}
+
 div.navigation a {
-  color: #aa13f0;
+  color: red;
   font-size: 20px;
+  text-decoration: none;
+}
+div.navigation a:hover{
+  color:black;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -23,6 +31,8 @@ a.badge-warning {
 
 .profile {
   background-color:#dc39461f;
+  // background-color:#eb5e22;
+
 }
 
 .profile_thumb {
@@ -31,6 +41,7 @@ a.badge-warning {
   background-size: cover;
   background-position: center;
 }
+
 
 .thumb
 {
@@ -48,11 +59,28 @@ a.badge-warning {
 }
 .footer
 {
-  background-color: red;
-  font-size:20px;
+  background-color:#692fa0ad;
+  font-size:30px;
   color:#ffffff;
+  padding:20px;
 }
 .header
 {
-  background-color: #ffffff;
+  background-color: #f6f6f6;
+}
+
+.image_transform
+{
+transition: 0.25s all;
+// transform: scale(1.1)
+  // transform: skewX(25deg);
+  // transform: skewY(25deg);
+}
+.image_transform:hover{
+  transform: scale(1.1)
+
+}
+
+body{
+  background-color:#6f42c136;
 }

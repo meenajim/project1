@@ -1,34 +1,35 @@
 <%if @current_user.nil?%>
-<h2>Restricted to Admins!</h2>
-
+  <h2>Restricted to Admins!</h2>
 <% elsif @current_user.present?%>
 
 <%= form_for @performance do |f| %>
-<fieldset class = "form-group col-5">
 
-<%= f.label :student_id %>
-<%= f.select :student_id, Student.pluck(:name,:id)%>
-</fieldset>
 <fieldset class = "form-group col-5">
+  <%= f.label :student_id %>
+  <%= f.select :student_id, Student.pluck(:name,:id)%>
+</fieldset>
 
-<%= f.label :name %>
-<%= f.text_field :name,:class => 'form-control' %>
-</fieldset>
 <fieldset class = "form-group col-5">
-<%= f.label :description%>
-<%= f.text_area :description,:class => 'form-control' %>
+  <%= f.label :name %>
+  <%= f.text_field :name,:class => 'form-control' %>
 </fieldset>
-<fieldset class = "form-group col-5">
 
-<%= f.label :performance_date %>
-<%= f.text_field :performance_date,:class => 'form-control' %>
-</fieldset>
 <fieldset class = "form-group col-5">
+  <%= f.label :description%>
+  <%= f.text_area :description,:class => 'form-control' %>
+</fieldset>
 
-<%= f.label :media,"Media: Please paste an embed file" %>
-<%= f.text_area :media,:class => 'form-control'  %>
+<fieldset class = "form-group col-5">
+  <%= f.label :performance_date %>
+  <%= f.text_field :performance_date,:class => 'form-control' %>
+</fieldset>
+
+<fieldset class = "form-group col-5">
+  <%= f.label :media,"Media: Please paste an embed file" %>
+  <%= f.text_area :media,:class => 'form-control'  %>
 </fieldset>
 
 <%= f.submit %>
+
 <% end %>
 <% end %>
