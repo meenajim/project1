@@ -1,17 +1,58 @@
+
+<div class="row">
+  <div class="col-sm">
+  </div>
+  <div class="col-sm">
+    <h1>Instructors</h1>
+  </div>
+  <div class="col-sm">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+  </div>
+  <div class="col-sm">
+    <%= link_to 'New Instructor',new_instructor_path, :class => 'badge badge-warning'%>
+  </div>
+  <div class="col-sm">
+  </div>
+</div>
+
 <%if @current_user.present? && @current_user.user_type == 'Admin'%>
-<%= link_to 'New Instructor',new_instructor_path %>
+<!-- <%= link_to 'New Instructor',new_instructor_path %> -->
 <%end%>
+<p></p>
+<div class="row">
+  <% @instructors.each do |instructor| %>
+    <div class="col-sm-3">
+      <div class="profile_thumb" style="background-image: url(<%= asset_path instructor.photo %>)"></div>
+      <%#= image_tag instructor.photo, :alt =>instructor.name, :class =>'thumb' if instructor.photo.present? %>
+      <p><%= link_to instructor.name, instructor %>: <%= instructor.instrument %></p>
+    <!-- <li>Instrument taught: <%= instructor.instrument %></li> -->
+    </div>
+  <% end %>
+</div>
 
-<h1>Instructors</h1>
+
+
+
+
+<!-- <%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
+<a class="badge badge-warning"<%= link_to 'New Instructor',new_instructor_path %></a>
+
+<%= link_to 'New Instructor',new_instructor_path %> -->
+<!-- <%end%>
+<p></p>
 <% @instructors.each do |instructor| %>
+
+
 <%= image_tag instructor.photo, :alt =>instructor.name, :class =>'thumb' if instructor.photo.present? %>
-
 <ul>
-  <!-- <li><%= link_to instructor.name, instructor %> has <%= pluralize(instructor.likes,'like')%></li> -->
   <li><%= link_to instructor.name, instructor %></li>
-
-  <!-- <li><%= instructor.qualification %></li> -->
   <li>Instrument taught: <%= instructor.instrument %></li>
-  <!-- <li><%= instructor.description %></li> -->
 </ul>
-<% end %>
+
+
+<% end %> -->

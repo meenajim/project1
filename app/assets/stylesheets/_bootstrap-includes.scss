@@ -1,0 +1,58 @@
+@import "bootstrap";
+@import "font-awesome.css";
+
+div.navigation a {
+  color: #aa13f0;
+  font-size: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color:red;
+  font-size:20px;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-between;
+}
+
+a.badge-warning {
+  font-size: 150%;
+  padding: 1em;
+}
+
+.profile {
+  background-color:#dc39461f;
+}
+
+.profile_thumb {
+  width: 10em;
+  height: 10em;
+  background-size: cover;
+  background-position: center;
+}
+
+.thumb
+{
+  max-height: 10em;
+}
+.container
+{
+ /* background-color: #cbc6c6; */
+ background-color: #f9f4f4;
+ // padding: 1em;
+}
+.logo{
+  width:200px;
+  height:180px;
+}
+.footer
+{
+  background-color: red;
+  font-size:20px;
+  color:#ffffff;
+}
+.header
+{
+  background-color: #ffffff;
+}

@@ -5,21 +5,21 @@
     <title></title>
   </head>
   <body>
-  <div id="login1">
+  <div>
 
     <h1>Log in</h1>
 
     <div><h2><%= flash[:error] %></h2></div>
     <%= form_tag login_path do %>
-    <div><%= label_tag  :email %>
-     <%= email_field_tag :email %></div>
-    <div><%= label_tag  :password %>
-    <%= password_field_tag :password %></div>
-    <p></p>
-    <p></p>
+      <fieldset class = "form-group col-4"><%= label_tag  :email %>
+       <%= email_field_tag :email, nil, :required=>true,:class => 'form-control' %></fieldset>
+      <fieldset class = "form-group col-4"><%= label_tag  :password %>
+      <%= password_field_tag :password, nil, :required=>true, :class => 'form-control' %></fieldset>
+      <fieldset class = "form-group">
+        <div><label></label><%= submit_tag "Log in" %></div>
 
-    <div class = "submit"><%= submit_tag "Log in" %></div>
-    <% end %>
+      </fieldset>
+      <% end %>
   </div>
 
 

@@ -1,26 +1,62 @@
-<h1>Students</h1>
 <%if @current_user.nil?%>
+<p></p><p></p>
 <h2>Please Sign in to proceed!</h2>
 
 <% elsif @current_user.present?%>
-  <p><%= link_to 'New Enrollment',new_student_path%></p>
+<div class="row text-center">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    <h1>Enrolled Students</h1>
+    </div>
+    <div class="col-sm">
+    </div>
+</div>
+<div class="row text-center">
+     <div class="col-sm">
+     </div>
+     <div class="col-sm">
+     <p><%= link_to 'New Enrollment',new_student_path, :class => 'badge badge-warning'%></p>
 
-    <%if @current_user.present? && @current_user.user_type == 'Admin'%>
-    <ul>
-      <% @students.each do |student| %>
-      <li><%= link_to student.name, student %></li>
-      <% end %>
-    </ul>
-    <% else %>
-    <ul>
-      <% @students_user.each do |student| %>
-      <li><%= link_to student.name, student %></li>
-      <% end %>
-    </ul>
+     </div>
+     <div class="col-sm">
+     </div>
+</div>
+<div class="row">
+     <div class="col-sm">
+     </div>
+     <div class="col-sm">
+     <%if @current_user.present? && @current_user.user_type == 'Admin'%>
 
-    <%end%>
+        <div class="card" style="width: 18rem;">
+
+          <ul class="list-group list-group-flush">
+          <% @students.each do |student| %>
+            <li class="list-group-item"><%= link_to student.name, student %></li>
+          <% end %>
+          </ul>
+        </div>
+
+      <% else %>
+
+        <div class="card" style="width: 18rem;">
+
+          <ul class="list-group list-group-flush">
+              <% @students_user.each do |student| %>
+                <li class = "list-group-item"><%= link_to student.name, student %></li>
+              <% end %>
+          </ul>
+        </div>
+      <%end%>
+      </div>
+      <div class="col-sm">
+
+      </div>
+</div>
 
 <%end%>
+
+
 
 
 

@@ -2,26 +2,44 @@
 <h1><%=@instructor.name%></h1>
 <%= image_tag @instructor.photo, :alt =>@instructor.name, :class =>'feature'%>
 <!-- <p><%=@instructor.name%> has <%= pluralize(@instructor.likes,'like')%></p> -->
-<p><%=@instructor.name%> <%= pluralize(@instructor.likes.count, 'like') %>
+<!-- <p><%=@instructor.name%> <%= pluralize(@instructor.likes.count, 'like') %> -->
+<p><%= pluralize(@instructor.likes.count, 'like') %>
+<!-- <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsl65K_7t1w9rT2Giezkv7A4MVfO00PuhNyRwZt7gdDylHWVsK"> -->
   <% if @current_user.present? %>
     <% if @instructor.likes.where(:user_id => @current_user.id).count == 0 %>
+      <!-- <i class="far fa-thumbs-up"></i> -->
       <%=link_to '  like', instructor_like_path(@instructor.id), :method => 'post'%></p>
     <% else %>
       <%= link_to '  unlike', instructor_like_path(@instructor.id), :method => 'delete' %>
     <% end %>
   <% end %>
+<div>
+
+  <div class="card" style="width: 70rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Degree held: <%= @instructor.qualification%></li>
+      <li class="list-group-item">Instrument taught: <%= @instructor.instrument %></li>
+      <li class="list-group-item">About: <%= @instructor.description %></li>
+
+    </ul>
+  </div>
+
+
 <ul>
 
-<li><u>Degree held:</u> <%= @instructor.qualification%></li>
+<!-- <li>Degree held: <%= @instructor.qualification%></li>
 <li>Instrument taught: <%= @instructor.instrument %></li>
-<li>About: <%= @instructor.description %></li>
-<li>Likes: <%= @likes %></li>
+<li>About: <%= @instructor.description %></li> -->
+<!-- <li>Likes: <%= @likes %></li> -->
 
 </ul>
 
 <%if @current_user.present? && @current_user.user_type == 'Admin'%>
 <div class = "controls">
-  <%= link_to 'Edit Instructor', edit_instructor_path(@instructor)%>
-<%= link_to 'Delete Instructor', @instructor, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%>
+  <%= link_to 'Edit Instructor', edit_instructor_path(@instructor),:class => 'badge badge-warning'%>
+  <%= link_to 'Delete Instructor', @instructor, :method => 'delete', :data =>{:confirm =>'Are you sure?'},:class => 'badge badge-warning'%>
+
+  <!-- <%= link_to 'Edit Instructor', edit_instructor_path(@instructor)%>
+<%= link_to 'Delete Instructor', @instructor, :method => 'delete', :data =>{:confirm =>'Are you sure?'}%> -->
 </div>
 <% end %>

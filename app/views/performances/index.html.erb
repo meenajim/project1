@@ -1,33 +1,65 @@
-<h1>Performances</h1>
+
+
+
 <%if @current_user.nil?%>
+<p></p><p></p>
 <h2>Please Sign in to proceed!</h2>
 
 <% elsif @current_user.present?%>
+<div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <h1>Performances</h1>
+    </div>
+    <div class="col-sm">
+    </div>
+</div>
+
+
+
 
 <%if @current_user.present? && @current_user.user_type == 'Admin'%>
-<%= link_to 'New Performance',new_performance_path%>
+<div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+      <%= link_to 'New Performance',new_performance_path,:class => 'badge badge-warning'%>
+
+    </div>
+    <div class="col-sm">
+    </div>
+</div>
+
+<p></p>
+<p></p>
 <ul>
 <% @performances.each do |performance| %>
-<h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
+<!-- <h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
 <p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
-<!-- <p><%= video_tag performance.media, :alt => performance.description, :class =>'thumb'%></p> -->
 <li> <%=performance.description%></li>
 <% if performance.performance_date.present? %>
 <li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
-<% end %>
+<% end %>-->
+
+<%= link_to image_tag(performance.media, :class =>'thumb',:alt =>performance.student.name),performance.student, :title =>performance.student.name %>
+
 <% end %>
 </ul><p></p>
 
 <% else %>
 <ul>
 <% @performances_student.each do |performance| %>
-<h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
+<!-- <h2><li><%= link_to performance.name, performance %> by <%= performance.student.name %></li></h2>
 <p><%= image_tag performance.media, :alt => performance.description, :class =>'thumb'%></p>
-<!-- <p><%= video_tag performance.media, :alt => performance.description, :class =>'thumb'%></p> -->
 <li> <%=performance.description%></li>
 <% if performance.performance_date.present? %>
 <li><%= performance.performance_date.strftime '%d/%m/%Y' %></li></p>
-<% end %>
+<% end %> -->
+
+<%= link_to image_tag(performance.media, :class =>'thumb',:alt =>performance.student.name),performance.student, :title =>performance.student.name %>
+
+
 <% end %>
 </ul><p></p>
 <% end %>
