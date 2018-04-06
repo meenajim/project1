@@ -35,7 +35,7 @@ The app runs on the browser. No installation required.
 
 ## Authors
 
-* **Meena Jim** - *Initial work* - [See the live site here](https://meenajim.github.io/project0/)
+* **Meena Jim** - *Initial work* - [See the live site here](https://herokuproject11.herokuapp.com)
 
 ## License
 
